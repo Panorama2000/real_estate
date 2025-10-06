@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Ventures | Crypto Investment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #00FF80;
+            font-family: Tahoma, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1100px; /* Reduced from 1470px to avoid overlap with sidebar */
+            margin: 0 auto 0 20px; /* Shift left with left margin, auto centers vertically */
+            padding: 10px;
+            position: relative;
+        }
+        	.heading {
+		  		display: flex;
+		  		position: absolute;
+		  		top: 10px;
+		  		left: 50px;
+		  		color: navy;
+		  		width: 100%;
+          	z-index: 1000;		  	
+		 }	
+
+        .title{
+            right: 300px; /* Slight padding from edge */
+            top: 0;
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 05px;
+            z-index: 1200;
+        }
+        .commercial-sidebar {
+            position: fixed;
+            right: 05px; /* Slight padding from edge */
+            top: 0;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 05px;
+        }
+        .commercial-placeholder1 {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder2 {
+            width: 200px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder3 {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder4 {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }         
+        .commercial-placeholder a {
+            font-family: Tahoma;
+            font-size: 14px;
+            color: navy;
+            text-decoration: none;
+        }
+        .commercial-placeholder a:hover {
+            color: #00FF80;
+        }
+
+        /* Custom Tooltip for Disabled Buttons */
+            button:disabled[data-tooltip] {
+            position: relative;
+        }
+
+        button:disabled[data-tooltip]:hover::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                color: navy;
+                border: 2px solid navy;
+                border-radius: 5px;                
+                padding: 5px 10px;
+                font-family: Tahoma;
+                font-size: 14px;
+                white-space: nowrap;
+                z-index: 1200;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                cursor: not-allowed;
+        }
+
+        /*button:disabled[data-tooltip]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: navy;
+            margin-bottom: -10px;
+        }*/
+
+        /* Custom Tooltip for Enabled Buttons */
+            button:enabled[data-tooltip2] {
+            position: relative;
+        }
+        button:enabled[data-tooltip2]:hover::before {
+                content: attr(data-tooltip2);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                color: navy;
+                border: 2px solid navy;
+                border-radius: 5px;
+                padding: 5px 10px;
+                font-family: Tahoma;
+                font-size: 14px;
+                white-space: nowrap;
+                z-index: 1200;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+        }
+        
+        
+        #fallback {margin-top: 20px; color: #666;}
+    </style>
+    
+    <style>
+ 	/* Popup container */
+
+    /* Responsive design */
+    @media (max-width: 600px) {#informationPopup {width: 95%; top: 2%; height: 90vh; max-height: 95vh;}
+    .informationPopup {max-height: calc(90vh - 120px);}
+    /* Custom scrollbar for better look (optional) */    
+    .informationPopup::-webkit-scrollbar {width: 10px;}
+    .informationPopup::-webkit-scrollbar-track {background: #f1f1f1;}
+    .informationPopup::-webkit-scrollbar-thumb {background: #888; border-radius: 15px;}
+    .informationPopup::-webkit-scrollbar-thumb:hover {background: #555;}
+
+	/* Report Popup */
+	
+	    /* Responsive design */
+    @media (max-width: 600px) {#reportPopup {width: 95%; top: 2%; height: 90vh; max-height: 95vh;}
+    .reportPopup {max-height: calc(90vh - 120px);}
+    /* Custom scrollbar for better look (optional) */    
+    .reportPopup::-webkit-scrollbar {width: 10px;}
+    .reportPopup::-webkit-scrollbar-track {background: #f1f1f1;}
+    .reportPopup::-webkit-scrollbar-thumb {background: #888; border-radius: 15px;}
+    .reportPopup::-webkit-scrollbar-thumb:hover {background: #555;}
+
+    </style>
+    
+
+	<script>window.onload=function(){window.scrollTo(0,0);}</script>
+</head>
+<body>
+<div class="container">
+        <!-- Banner -->
+        <img src="uploads/large_palmbanner.jpg" alt="Website Banner" width="100%" style="max-width: 1200px; height: 400px;">
+
+        <!-- Title -->
+        <!-- Title -->
+        <div class="heading">
+        <h1 style="font-family: Tahoma; font-size: 48px; text-align: left; margin: 10px 0;">BEACH AND OCEAN LIVING</h1>
+        </div>
+
+			<div style="display: flex; width: 100%; margin-bottom: 10px; margin-top: 10px; gap: 06px;">
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="home.html">
+                        <button id="homeBtn" enabled
+                            data-tooltip="Read our White Paper First"                         
+                            data-tooltip2="Back to Home"                        
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Home!</b>
+                    	</button></a>	
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="vistacoin.html">
+                        <button id="buy1Btn" enabled
+                            data-tooltip="Read our White Paper First"                         
+                            data-tooltip2="Buy Vista Coins"                        
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>$Vista Coins</b>
+                    	</button></a>	
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="nonstaking.html">
+                        <button id="rwaBtn" enabled
+                            data-tooltip="Read our White Paper First!"                        
+                            data-tooltip2="RWA Tokenization on Ripple Ledger!"                           
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>RWA Tokens</b>
+                    	</button></a>			
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="propertydeals.html">
+                        <button id="propBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Property Ecosystems!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Property</b>
+                        </button></a>
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="about.html">
+                        <button id="abtBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="About Us!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>About Us</b>
+                        </button></a>
+           			</div>
+           			
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="faqs.html">
+                        <button id="faqsBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Frequently Asked Questions!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>FAQ's</b>
+                        </button></a>
+          				</div>
+          				
+          				<div style="width: 12%; text-align: center; flex-shrink: 0; height: 20">       
+        						<button id="informationBtn" enabled
+              				data-tooltip2="Interesting facts about this Website!"
+              				style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 130px; position: relative;"
+              				onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+            					onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+            					<b>Web Info</b>
+        					</button>
+        				</div>
+        				
+          				<div style="width: 12%; text-align: center; flex-shrink: 0; height: 20"><!-- Button to trigger email popup -->
+   								<button class="vista-button" enabled                            
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Contact us!"            				    							
+									style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 130px; position: relative;"
+									onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';" 
+									onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';" 
+									onclick="openPopup('emailPopup')">
+									<b>Contact Us</b>
+								</button>	
+        				</div>
+
+
+
+           				          				          				          				          			                    
+			</div> 
+
+			<div style="display: flex; width: 100%; margin-bottom: 10px; margin-top: 10px; gap: 6px;">
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="ruralventures.html">
+                        <button id="ruralBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Rural Off-grid Living"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Roral Off-grid</b>
+                        </button></a>
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="mountainventures.html">
+                        <button id="mtnBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Mountain Cabin Living"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Mountain</b>
+                        </button></a>
+           			</div>
+           			
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="bigskyventures.html">
+                        <button id="bigBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Big-sky Living"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Big Sky</b>
+                        </button></a>
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="[ report pdf ]">
+                        <button id="rptBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="The Beach Property Report!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Beach Report!</b>
+                        </button></a>
+           			</div>
+           			
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="[ qualify pdf ]">
+                        <button id="qufBtn" enabled
+                           data-tooltip="Read our White Paper First!"
+                           data-tooltip2="The Qualifying List!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Qualifying List</b>
+                        </button></a>
+          				</div>          				
+          				
+  						<div style="width:12%; text-align: left; flex-shrink: 0; height: 20">	
+  							<a href="https://za.pinterest.com/PanoramaCorpLtd/beach-and-ocean-living" target="_blank">
+                        <button style="background-color: white; border: 2px solid red; padding: 02px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"                            
+                        	data-tooltip2="Pintrest!"  
+                          	onmouseover="this.style.backgroundColor='#ffcccc'; this.style.borderColor='red';"
+                          	onmouseout="this.style.backgroundColor='white'; this.style.borderColor='red';">
+                            <img src="Uploads/icon_pintrestlogo2.png" alt="Pinterest" width="32" height="32">
+                        </button>
+                    		</a>
+                    </div>                    
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">	
+  							<a href="https://linktr.ee/Palm.Ventures" target="_blank">
+                        <button style="background-color: white; border: 2px solid #004d00; padding: 02px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"                             
+                        		data-tooltip2="Linktree!"                            
+                               onmouseover="this.style.backgroundColor='#90EE90'; this.style.borderColor='#004d00';"
+                               onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#004d00';">
+                            <img src="Uploads/icon_limktreelogo2.png" alt="Linktree" width="32" height="32">
+                        </button>
+                    		</a>
+                    </div>
+                    
+						<!--<h1>Share This Page</h1>
+    					<p>Click the button to open your device's native share dialog (WhatsApp, Facebook, X, Email, etc.).</p>-->
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">
+     						<button id="shareBtn" enabled
+                           data-tooltip="Read our White Paper First!"
+                           data-tooltip2="Share with others!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">     						
+    							<b>Share</b>
+    						</button>
+    							<div id="fallback" style="display: none;">
+        							<p>Native sharing not supported. <a href="#" id="copyUrl">Copy URL to clipboard</a> or share manually.</p>
+    							</div>
+                    </div>
+        	</div>
+ 
+
+
+       	<!-- Email popup -->
+			<div id="emailPopup" role="dialog" aria-modal="true" style="display: none; position: fixed; top: 20%; left: 50%; transform: translateX(-50%); background: white; padding: 20px; border: 2px solid navy; z-index: 200; width: 90%; max-width: 500px;">
+		  		<h2 style="font-family: Tahoma; font-size: 24px; margin: 10px 0;">Send Us a Message</h2>
+					<form id="emailForm" onsubmit="sendEmail(event)">
+    					<div style="margin-bottom: 10px;">
+      						<label for="emailSubject" style="font-family: Tahoma; font-size: 16px;">Subject:</label>
+      						<select id="emailSubject" name="subject" style="font-family: Tahoma; font-size: 16px; padding: 5px; width: 100%;">
+        						<option value="VISTA Coin Inquiry">VISTA Coin Inquiry</option>
+        						<option value="Property Deals">Property Deals</option>
+        						<option value="Staking with Smithii">Staking with Smithii</option>
+        						<option value="Ripple Ledger Tokenization">Ripple Ledger Tokenization</option>
+        						<option value="General Inquiry">General Inquiry</option>
+      						</select>
+      					</div>
+
+    					<div style="margin-bottom: 10px;">
+      						<label for="emailMessage" style="font-family: Tahoma; font-size: 16px;">Message (max 500 characters):</label>
+      							<textarea id="emailMessage" name="message" maxlength="500" style="font-family: Tahoma; font-size: 16px; width: 100%; height: 100px; padding: 5px;" oninput="updateCharCount()" rows="1" cols="20">
+      							</textarea>
+      							<p id="charCount" style="font-family: Tahoma; font-size: 14px; color: navy;">0/500 characters</p>
+    					</div>
+    					
+    					<div style="display: flex; gap: 10px; justify-content: center;">
+      						<button type="submit" class="vista-button" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;" 
+      							onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';" 
+      							onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+      							<b>Send Email</b>
+      						</button>
+      						
+      						<button type="button" onclick="closePopup('emailPopup')" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 20px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 150px;" 
+      							onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';" 
+      							onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+      							<b>Close</b>
+      						</button>
+    					</div>
+  					</form>
+    		</div>
+    		<!--End Emailpopup-->			
+
+
+
+
+       	
+			<!--Content-->
+			<div style="display: flex; width: 100%; margin-bottom: 20px; gap: 10px;">
+  				<div style="width: 690px; text-align: left; flex-shrink: 0; height: 420px">
+                 	<h1 style="font-family: Verdana; font-size: 24px; color: balck; word-spacing: 1; line-height: 150%; margin-top: 1; margin-bottom: 1">
+                 	Unlock Coastal Riches:<br>Beach home flipping for maximum profits</h1>                 
+						<p style="font-size: 14pt; text-align: justify; word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+						Ride the wave of coastal property flipping, transforming beachfront fixer-uppers into lucrative gems. 
+						Our report spotlights South Africa's West Coast, Turks and Caicos, St. Kitts & Nevis, and St. Vincent & the Grenadines, 
+						with entries from $45,000 yielding ROIs up to 35% in swift 6-12 month renovate-resell cycles.<br>
+						Revitalize weathered cottages in Paternoster or Bequia, tapping tourism and remote work trends for 6-10% annual growth.
+						Low bureaucracy, flexible zoning, and crime rates under 1.5 per 1,000 residents ensure secure flips in idyllic settings.<br>
+						These blue water gems are perfect for scaling your portfolio in sun-soaked serenity. 
+						This will attract international retirees, yacht owners, and middle-class vacationers seeking paradise<br>
+						</p>			    				
+  				</div>
+              <div style="text-align: left; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; padding: 30px; max-width: auto; line-height: 1.5;";>
+                     <img border="1" src="Uploads/palmventures_logo.png" width="300" height="300" align="top">
+                        
+						<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0"><b>Ready to ride the wave?</b></p>
+
+						<div id="readMore" style="display: flex; align-items: center; gap: 10px; font-family: Verdana, sans-serif; font-size: 12pt;">
+                     <p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+    						<span style="color: black; cursor: pointer;" 
+          					onmouseover="this.style.color='blue'" 
+          					onmouseout="this.style.color='black'"><b><u>Click here!</u></b>
+    						</span>
+    						<span style="color: black;"><b>to read more,</b>
+    						</span>
+						</div>
+								
+                     <p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+								
+							<span style="color: black; margin: 10px 0;"><b>OR!</b>
+							</span>
+									
+							<p style="color: black; cursor: pointer; word-spacing: 0; line-height: 150%; margin: 0" 
+   							onmouseover="this.style.color='blue'" 
+   							onmouseout="this.style.color='black'">
+    						<a href="[pdf ]" download="[pdf]" style="color: inherit; text-decoration: none;">
+        					<b><u>Download the full report here!</u></b>
+    						</a>
+						</p>
+									
+						<p style="color: black; word-spacing: 0; line-height: 150%; margin: 0"><b>Start creating your wealth today.</b>
+						</p>
+						<!--<a href="palm.pdf" download="palm.pdf">Click here</a>-->
+				</div>
+			</div> 
+        	<!-- End content-->
+
+
+
+        
+        <!-- Video -->
+ 			<div style="text-align: center; margin-left: auto; margin-right: auto; padding: 0px; max-width: auto; line-height: 100%;">
+    			<h1 style="font-family: Verdana; font-size: 24px; color: black; line-height: 100%; margin-top: 0; margin-bottom: 0">"About ... The Who and How!".</h1>
+ 			</div>
+
+			<div style="display: flex; width: 100%; margin-bottom: 10px; margin-bottom: 10px; gap: 10px;">
+  				<div style="width: 300px; text-align: left; flex-shrink: 0; height: 300px">
+                 <p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+            		<video border="1" src="uploads/palmventures_av1.mp4" type="video/mp4" width="300" height="300" align="top" controls autoplay loop muted>
+                		<!--<source src="uploads/palmventures_av1.mp4" type="video/mp4">-->
+                		Your browser does not support the video tag.
+            		</video>		    		
+  				</div>
+              <div style="text-align: left; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; padding: 10px; max-width: auto; line-height: 1.5;";>
+    				<p style="font-family: Tahoma; font-size: 18px; word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0" align="left">
+    					Ready to surf to success?
+    					Vista Coin holders gain tokenized asset access at a discount!
+    					Early adopters get exclusive discount (10%) on real world asset token purchases.<br>
+    					Real world asset tokenization will be launched on the Ripple Ledger(XRP) in due course.<br> 
+    					This will turn beach flips into tokenized wealth machines.<br>
+    					Are you ready to ride the wave?<br>
+    				<span style="cursor: pointer; color: black;" 
+          			onmouseover="this.style.color='blue'" 
+          			onmouseout="this.style.color='black'">
+        			<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" 
+           			style="color: inherit; text-decoration: none;"><u>Click here!</u></a>
+    				</span> to buy some $VISTA and start creating your wealth today.<br>
+            			Holding $VISTA is your gateway to crypto wealth!<br>
+						We are building innovative investment opportunities through crypto staking and Real World Property ventures.<br>
+						Join our community!We are growing Wealth, Crypto Style!
+					</p>
+				</div>
+			</div> 
+
+       
+
+       
+
+        <!-- Whitepaper Popup -->
+        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
+            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
+            <div style="margin-top: 10px;">
+                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
+                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
+                <button onclick="closePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">Close</button>
+            </div>
+        </div>
+        
+        <!-- Gallery Placeholder -->
+        <!-- Gallery Table -->
+        	<!--<table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
+            <tr>
+                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
+                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
+                </td>
+                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
+                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
+                </td>
+            </tr>
+        	</table>--> 
+        <!-- End of Gallery Table -->
+      
+        
+        <!-- Info Popup -->
+        <div id="informationPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				<div style="
+					margin-top: 05px;
+					margin: 10px 15px;
+					overflow-y: auto; 
+					flex: 1; 
+					flex-direction: column; 
+					max-height: calc(80vh - 120px); 
+					background-color: white;  
+					width: 95%; 
+					max-width: 620px; 
+					height: 80vh; 
+					max-height: 90vh; 
+					z-index: 1000;">
+         		
+                	<h2 align="center">Fun Facts About This Website!</h2>
+                
+             			<div id="image" align="center">
+                			<img src="Uploads/blockchain_logo10.jpg" alt="Inspirational crypto and real estate graphic" style="max-width: 100%; width: 400px; height: auto; border-radius: 10px ; margin: 15px 0">
+                		</div>
+				    <p style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 1; margin-bottom: 0">
+                  <font face="Arial">
+				    Welcome to a digital space built with passion, creativity, and a mission to inspire!<br> 
+				    This website is proof that big dreams don't need big budgets.<br>
+				    Here's the scoop on how we brought this vision to life and why it matters to YOU, the budding entrepreneur or curious adventurer!<br>
+	    			<br>
+				    <strong>Built on a Shoestring, Made for Greatness</strong><br>
+				    We created this site using the magic of <em>free</em> tools and a sprinkle of ingenuity.<br>
+				    Think stunning graphics from <strong>Canva</strong><br>
+				    AI-powered content from <strong>ChatGPT</strong> and <strong>Gemini</strong>.<br>
+				    <strong>Grok</strong> helped with clever coding assistance in HTML, CSS, and JavaScript.<br>
+				    No fancy funding here, just pure hustle!<br>
+				    <br>
+				    <strong>Marketing That Won't Break the Bank</strong><br>
+				    Our outreach? Oh, it's as scrappy as it gets!<br>
+				    We're spreading the word through <strong>Linktree</strong>, <strong>Telegram</strong>, <strong>Pinterest</strong>, <strong>X.com</strong>, and more,... all for free.<br>
+				    You can do it too! Pick your platforms, share your story, and watch your audience grow.<br>
+		    		 <br>
+				    <strong>Meme Coins: The Gateway to Big Ideas</strong><br>
+				    Ever dreamed of launching your own crypto coin?<br>
+				    With platforms like <strong>Pump.fun</strong>, <strong>Moonshot</strong>, or <strong>Meteora</strong>, you can mint a meme coin for just a few bucks!<br>
+				    We're using these coins as a stepping stone to something bigger,... think <em>real-world asset tokenization</em>.<br>
+			    	 <br>
+				    <strong>Tokenizing the Future, Affordably</strong><br>
+				    Tokenizing assets on blockchains like Ethereum can cost a fortune.<br>
+				    But we're exploring smarter, cheaper ways, like using the <strong>Ripple Ledger</strong> for cost-effective tokenization.<br>
+				    Our goal? To make fractional ownership of real-world assets, like property, accessible to everyday adventurers like you.<br>
+				    <br>
+				    <strong>A Legacy in Real Estate</strong><br>
+				    Our founder has been building dreams since the mid-90s, from cozy family homes to luxury hotels, holiday resorts and private game lodges.<br>
+				    We believe <strong>property ownership</strong> is the cornerstone of wealth!<br>
+				    We're here to help you get in on the action through innovative tokenization.<br>
+				    <br>
+				    <strong>Why This Matters to You</strong><br>
+				    This website isn't just a platform, it's a movement.<br>
+				    We're paving the way for anyone with a vision to tokenize assets, create wealth, and own a piece of the future.<br>
+				    Whether you're curious about meme coins, real estate, or just love a good underdog story, you're in the right place!<br>
+				    <br>
+				    <strong>Ready to join the adventure? Explore, dream big, and let's tokenize the world together!</strong><br>
+				    <img src="Uploads/3palm_logo.png" alt="Inspirational crypto and real estate graphic" width="200" height="150"></font></p>
+                 		<div id="closeBtn" align="center">
+                			<button onclick="closeInformation()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"><b>Close</b></button>
+                		</div>
+				</div>
+        </div>
+
+			<!--Report popup-->
+			<div id="reportPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				  <embed src="whitepaper.pdf" frameborder="0" type="application/pdf" width="600" height="400">
+				  <!--<iframe></iframe>-->
+
+				  <div id="closeBtn" align="right">
+                     <p align="center">
+					 <button onclick="closeReport()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"><b>Close</b></button>
+				  </div>
+			</div>
+			
+
+        <!-- Footer Text -->
+		 <footer>
+			<div style="display: flex; width: 100%; margin-bottom: 20px;">
+  						<div style="width: 100%; text-align: left; flex-shrink: 0;">		
+       	 			<p style="font-family: Tahoma; font-size: 14px; text-align: left; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
+       	 			<b>
+            			Panorama Global | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
+        				</p>
+      					<p style="font-family: Tahoma; font-size: 14px; text-align: center; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
+            			This website is the property of Panorama Global investments IBC, copyright 2025
+						</b>
+        				</p>        				
+        				</div>
+   			</div>
+        </footer>
+
+        
+    <!-- Commercial Rental Placeholders -->
+    <div class="commercial-sidebar">
+        <div class="commercial-placeholder1" style="width: 200; height: 200">
+            <a href="mailto:panorama.2018@proton.me" target="_blank">
+            <img style="max-width: 198px%; height: 198px;" src="[ your pic here]">
+                Contact owner to advertise your business here! USD500/ Month
+            </a>
+        </div>
+        <div class="commercial-placeholder2" style="width: 200; height: 150">
+            <a href="mailto:panorama.2018@proton.me" target="_blank">
+            <img style="max-width: 198px%; height: 148px;" src="[ your pic here]">
+                Contact owner to advertise your business here! USD300/Month
+            </a>
+        </div>
+        <div class="commercial-placeholder3" style="width: 200; height: 100">
+            <a href="mailto:panorama.2018@proton.me" target="_blank">
+            <img style="max-width: 198px%; height: 98px;" src="[ your pic here]">
+                Contact owner to advertise your business here! USD200/Month
+            </a>
+        </div>
+        
+        <!-- QR Images -->
+			<div class="commercial-placeholder4" style="display: flex; width: 100%; gap: 2px; justify-content: center;">        	
+  					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
+    					<a href="https://linktr.ee/Panorama.Global" target="_blank" rel="nofollow noopener">
+      					<img src="Uploads/panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
+    					</a>
+  					</div>
+ 					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
+    					<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank" rel="nofollow noopener">
+      					<img src="Uploads/coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
+                 		</a>
+  					</div>
+			</div>	
+       	<!--<div class="commercial-placeholder5" style="display: flex; width: 100%; align: center;">
+					<div style="width: 200px; text-align: center; flex-shrink: 0; height: 19">       
+        				<button id="informationBtn" enabled
+              		data-tooltip2="Interesting facts about this Website!"
+              		style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 13px; font-family: Tahoma; font-size: 16px; cursor: pointer; margin-left: 0; margin-right: 0; margin-bottom: 0; margin-top:0"
+              		onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+            			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';"><b>Website Information</b>
+        				</button>
+        			</div>        
+			</div>-->   
+    </div>
+</div><!--Container end-->
+
+    
+    <!-- Inline JavaScript for Popup and Button Logic -->
+
+	<!--Report function-->
+    <script>
+    	
+    	 const readMore = document.getElementById('readMore');
+       const reportPopup = document.getElementById('reportPopup');
+       readMore.addEventListener('click', () => {reportPopup.style.display = 'block';});
+       function closeReport() {reportPopup.style.display = 'none';} 
+             
+    </script>
+
+	<!-- Site information button function-->
+    <script>
+
+        const informationBtn = document.getElementById('informationBtn');
+        const informationPopup = document.getElementById('informationPopup');
+        informationBtn.addEventListener('click', () => {informationPopup.style.display = 'block';});
+        function closeInformation() {informationPopup.style.display = 'none';}
+
+    </script>
+    
+	<!--White paper button Function-->    
+    <script>
+        const whitepaperBtn = document.getElementById('whitepaperBtn');
+        const stakingBtn = document.getElementById('stakingBtn');
+        const whitepaperPopup = document.getElementById('whitepaperPopup');
+        const readCheckbox = document.getElementById('readCheckbox');
+        const riskCheckbox = document.getElementById('riskCheckbox');
+
+        whitepaperBtn.addEventListener('click', () => {
+            whitepaperPopup.style.display = 'block';
+        });
+
+        function closePopup() {
+            whitepaperPopup.style.display = 'none';
+        }
+
+        function checkCheckboxes() {
+            if (readCheckbox.checked && riskCheckbox.checked) {
+                stakingBtn.disabled = false;
+                stakingBtn.style.opacity = '1';
+                stakingBtn.style.cursor = 'pointer';
+                stakingBtn.onclick = () => {
+                    window.location.href = 'staking.html';
+                };
+            } else {
+                stakingBtn.disabled = true;
+                stakingBtn.style.opacity = '0.5';
+                stakingBtn.style.cursor = 'not-allowed';
+            }
+        }
+
+        readCheckbox.addEventListener('change', checkCheckboxes);
+        riskCheckbox.addEventListener('change', checkCheckboxes);
+    </script>
+    
+    <!--Share button functions -->
+    <script>
+        const shareBtn = document.getElementById('shareBtn');
+        const fallback = document.getElementById('fallback');
+        const copyUrl = document.getElementById('copyUrl');
+
+        // Customize these for your content
+        const shareData = {
+            title: 'Check out this awesome page!',  								// e.g., document.title
+            text: 'I found this interesting content – sharing it with you!',  	// Optional description
+            url: window.location.href  												// Current page URL (or a specific one)
+        };
+
+        shareBtn.addEventListener('click', async () => {
+            if (navigator.share) {  // Check support
+                try {
+                    await navigator.share(shareData);
+                    console.log('Sharing successful!');  // Optional: Handle success
+                } catch (error) {
+                    if (error.name !== 'AbortError') {  // Ignore if user cancels
+                        console.error('Error sharing:', error);
+                        showFallback();
+                    }
+                }
+            } else {
+                showFallback();
+            }
+        });
+
+        function showFallback() {
+            fallback.style.display = 'block';
+            //shareBtn.disabled = true;
+        }
+
+        // Fallback: Copy URL to clipboard
+        copyUrl.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                await navigator.clipboard.writeText(shareData.url);
+                alert('URL copied to clipboard!');
+                 fallback.style.display = 'none';
+            } catch (err) {
+                console.error('Failed to copy:', err);
+
+                // Older fallback for clipboard
+                const textArea = document.createElement('textarea');
+                textArea.value = shareData.url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('URL copied to clipboard!');
+            }
+        });
+    </script>
+    
+        <!--Email popup-->
+    <script>
+  		function openPopup(id) {
+    		document.getElementById(id).style.display = 'block';
+  		}
+  		function closePopup(id) {
+    		document.getElementById(id).style.display = 'none';
+  		}
+  		function updateCharCount() {
+    		const textarea = document.getElementById('emailMessage');
+    		const charCount = document.getElementById('charCount');
+    		charCount.textContent = `${textarea.value.length}/500 characters`;
+  		}
+  		function sendEmail(event) {
+    		event.preventDefault();
+    		const subject = document.getElementById('emailSubject').value;
+    		const message = document.getElementById('emailMessage').value;
+    		const email = 'panorama.2018@proton.me'; // Replace with your email
+    		const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    		window.location.href = mailtoLink;
+    		closePopup('emailPopup');
+    		openPopup('confirmationPopup'); // Show confirmation popup
+ 		}
+		</script>
+
+    
+</body>
+</html>

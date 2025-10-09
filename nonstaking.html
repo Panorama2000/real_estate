@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stake you Vista</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #C0C0C0;
+            font-family: Tahoma, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Optional: Smooth scrolling if you add manual scroll later */
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto 0 20px;
+            padding: 05px;
+            position: relative;
+        }
+
+		  .heading {
+		  	display: flex;
+		  	position: absolute;
+		  	top: 10px;
+		  	left: 50px;
+		  	color: navy;
+		  	width: 100%;
+          z-index: 1000;		  	
+		 }	
+		
+        .commercial-sidebar {
+            position: fixed;
+            right: 05px;
+            top: 00px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 05px;
+        }
+        .commercial-placeholder1 {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder2 {
+            width: 200px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .commercial-placeholder3 {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }   
+        .commercial-placeholder4 {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }  
+        .commercial-placeholder a {
+            font-family: Tahoma;
+            font-size: 14px;
+            color: navy;
+            text-decoration: none;
+        }
+        .commercial-placeholder a:hover {
+            color: #00FF80;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 2px solid navy;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .popup.show {
+            display: block;
+        }
+        .popup button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: navy;
+            border: 2px solid navy;
+            font-family: Tahoma;
+            font-size: 16px;
+        }
+        .popup button:hover {
+            background-color: navy;
+            color: white;
+            border-color: #007bff;
+        }
+        .popup p {
+            font-family: Tahoma;
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+
+         /* Custom Tooltip for Disabled Buttons */
+            button:disabled[data-tooltip] {
+            position: relative;
+        }
+
+        button:disabled[data-tooltip]:hover::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                color: navy;
+                border: 2px solid navy;
+                border-radius: 5px;                
+                padding: 5px 10px;
+                font-family: Tahoma;
+                font-size: 14px;
+                white-space: nowrap;
+                z-index: 1200;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                cursor: not-allowed;
+        }
+
+
+
+        /* Custom Tooltip for Enabled Buttons */
+            button:enabled[data-tooltip2] {
+            position: relative;
+        }
+        button:enabled[data-tooltip2]:hover::before {
+                content: attr(data-tooltip2);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                color: navy;
+                border: 2px solid navy;
+                border-radius: 5px;
+                padding: 5px 10px;
+                font-family: Tahoma;
+                font-size: 14px;
+                white-space: nowrap;
+                z-index: 1200;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+        }
+        </style>
+
+      
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <!-- Solana Web3.js -->
+    <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+    <!--<script>window.onload=function(){window.scrollTo(0,0);}</script>-->
+    
+    <!--Prevents browser from restoring scroll position-->
+    <!--Ensures page starts at the top--> 
+    <script> if ('scrollRestoration' in history) {history.scrollRestoration = 'manual';}window.scrollTo(0, 0);</script>
+   
+</head>
+<body>
+<div class="container">
+      
+
+        <!-- Banner -->
+         <img border="0" src="Uploads/panoramabanner19.jpg" width="1100" height="350">
+       
+        <!-- Title -->
+        <div class="heading">
+        <h1 style="font-family: Tahoma; font-size: 48px; text-align: center; margin: 10px 0;">PANORAMA GLOBAL PROPERTIES</h1>
+        </div>
+        
+			<div style="display: flex; width: 100%; margin-bottom: 10px; margin-top: 10px; gap: 06px;">
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="home.html">
+                        <button id="hmeBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Back to Home !"                          
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Home</b>
+                        </button></a>
+          				</div>			
+			
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+             				<button id="whiteBtn" enabled
+                  			data-tooltip2="Read The White Paper!"                        
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                  			<b>White Paper</b>
+            				 </button>			
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="vistacoin.html">
+                        <button id="buy1Btn" enabled
+                            data-tooltip="Read our White Paper First"                         
+                            data-tooltip2="How to get your own $Vista Coins"                        
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>$Vista Coins</b>
+                    	</button></a>	
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="staking.html">
+                        <button id="stakBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="How to Benefit from Staking your $Vista Coins"                          
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Staking Vista</b>
+                        </button></a>
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="propertydeals.html">
+                        <button id="propBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Our Various Property Ecosystems!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>Property</b>
+                        </button></a>
+          				</div>
+          				
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="about.html">
+                        <button id="abtBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="About Us!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>About Us</b>
+                        </button></a>
+           			</div>
+           			
+  						<div style="width: 12%; text-align: left; flex-shrink: 0; height: 20">		
+                        <a href="faqs.html">
+                        <button id="faqsBtn" enabled
+                            data-tooltip="Read our White Paper First!"
+                            data-tooltip2="Frequently Asked Questions!"                         
+                  			style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 130px; position: relative;"
+                  			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+                        	<b>FAQ's</b>
+                        </button></a>
+          				</div>
+          				
+          				<div style="width: 12%; text-align: center; flex-shrink: 0; height: 20">       
+        						<button id="informationBtn" enabled
+              				data-tooltip2="Interesting facts about this Website!"
+              				style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 05px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 130px; position: relative;"
+              				onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+            					onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
+            					<b>Web Info</b>
+        					</button>
+        				</div>           				          				          				          				          			                    
+			</div>        
+
+      
+		<div style="display: flex; width: 100%; margin-bottom: 10px;">
+  			<div style="width: 300px; text-align: left; flex-shrink: 0;">
+            		<video border="1" src="prd3.mp4" type="video/mp4" width="300" height="auto" align="top" controls autoplay loop muted>
+                		<source src="prd3.mp4" type="video/mp4">
+                		Your browser does not support the video tag.
+            		</video>
+  			</div>		
+  			<div style="width: 590px; text-align: left; flex-shrink: 0; padding-left: 20px">
+  					<p align="left">
+  						<font face="Tahoma" size="5" color="black">
+  						Real World Asset Tokenization on the Ripple Ledger!
+  						</font>
+  					</p>
+    				<p style="font-family: Tahoma; font-size: 16px; line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2; color: black;">
+	    			Real estate tokenization is the new route to property ownership and wealth.<br>
+					The global real estate industry is set to explode with new investors.<br>
+					Its time for you to become a property tycoon!<br>
+					Get in on the ground floor and grow passive wealth as the market expands.<br>
+					Get PRD property tokens at an initial price of only $100 per token!<br>
+					The quantity of tokens available for purchase is limited to only 4 million!<br>
+					Don't miss out! Join the global real estate family.<br>
+					As more deals are concluded the token value will only increase!<br>
+					This is a Real opportunity to participate in Real property deals in Real world-wide locations.<br>
+					You are literally buying into the Global real estate economy.<br>
+					Become a beneficiary in the Global real estate industry !<br>
+					Own a stake in this lucrative market!<br>
+					We are going live on the Ripple Ledger very soon!<br>
+					Check back a bit later and join the empire! Bookmark this page!				    				
+    			</p>
+  			</div>
+  			<div style="width: 200px; text-align: right; flex-shrink: 0; padding-right: 10px; padding-bottom: 20px;">
+    				<div style="flex-grow: 1; padding-right: 10px; margin: 0 0 10px 0;">
+  							<p align="center">
+  								<font face="Tahoma" size="5" color="black">
+  								Buy PRD on the XRP Ledger
+  								</font>
+  							</p>
+  							<img src="Uploads/handeyes.gif" alt="waving hand" width="130px" style="display: block; margin: 0 auto 10px auto; align: center">
+  						<a href="home.html">   
+     					<button id="migrateBtn" enabled
+                        data-tooltip="Read our White Paper First!"
+                        data-tooltip2="Convert Your Vista to PRD on the XRP Ledger!"                         
+          					style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 5px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 180px;"
+          					onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  		onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">     						
+    						<b>PRD Tokens</b>
+    					</button>
+    					</a>
+    				</div>
+    		 </div>
+		</div>       		        		
+       
+		<div style="display: flex; width: 100%; margin-bottom: 10px;">
+  			<div style="width: 410px; text-align: left; flex-shrink: 0;">
+
+			</div>
+  			<div style="width: 200px; text-align: left; flex-shrink: 0;">
+
+			</div>		
+  			<div style="width: 480px; text-align: left; flex-shrink: 0; padding-left: 10px; padding-right: 10px;">
+            		<!--<video border="1" src="pgp1.mp4" type="video/mp4" width="480" height="auto" align="top" controls autoplay loop muted>
+                		<source src="pgp1.mp4" type="video/mp4">
+                		Your browser does not support the video tag.
+            		</video>-->
+			</div>			
+		</div>
+		
+		
+        <!-- Personalized Welcome Message -->
+        <p id="welcomeMessage" style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0; display: none;">
+            <font color="#000080">
+            Welcome Guest! It’s good to have you visit us! Do you have $VISTA coins or do you need to purchase?</font>
+        </p>
+        
+
+      
+        <!-- Whitepaper Popup -->
+        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%; z-index: 1000;">
+            <embed src="white-paper.pdf" type="application/pdf" width="600" height="400">  
+            <div style="margin-top: 10px;">
+                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
+                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
+                <button id="closewhiteBtn" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top: 10px;">Close</button>
+            </div>
+        </div>
+        <!-- End Whitepaper Popup -->
+        <!--About this site-->
+        
+        <div id="informationPopup" style="display: none; position: fixed; top: 55%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				<div style="
+					margin-top: 05px;
+					margin: 10px 15px;
+					overflow-y: auto; 
+					flex: 1; 
+					flex-direction: column; 
+					max-height: calc(80vh - 120px); 
+					background-color: white;  
+					width: 95%; 
+					max-width: 620px; 
+					height: 80vh; 
+					max-height: 90vh; 
+					z-index: 1000;">
+         		
+                	<h2 align="center">Fun Facts About This Website!</h2>
+                
+             			<div id="image" align="center">
+                			<img src="Uploads/blockchain_logo10.jpg" alt="Inspirational crypto and real estate graphic" style="max-width: 100%; width: 400px; height: auto; border-radius: 10px ; margin: 15px 0">
+                		</div>
+				    <p style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 1; margin-bottom: 0">
+                  <font face="Arial">
+				    Welcome to a digital space built with passion, creativity, and a mission to inspire!<br> 
+				    This website is proof that big dreams don't need big budgets.<br>
+				    Here's the scoop on how we brought this vision to life and why it matters to YOU, the budding entrepreneur or curious adventurer!<br>
+	    			<br>
+				    <strong>Built on a Shoestring, Made for Greatness</strong><br>
+				    We created this site using the magic of <em>free</em> tools and a sprinkle of ingenuity.<br>
+				    Think stunning graphics from <strong>Canva</strong><br>
+				    AI-powered content from <strong>ChatGPT</strong> and <strong>Gemini</strong>.<br>
+				    <strong>Grok</strong> helped with clever coding assistance in HTML, CSS, and JavaScript.<br>
+				    No fancy funding here, just pure hustle!<br>
+				    <br>
+				    <strong>Marketing That Won't Break the Bank</strong><br>
+				    Our outreach? Oh, it's as scrappy as it gets!<br>
+				    We're spreading the word through <strong>Linktree</strong>, <strong>Telegram</strong>, <strong>Pinterest</strong>, <strong>X.com</strong>, and more,... all for free.<br>
+				    You can do it too! Pick your platforms, share your story, and watch your audience grow.<br>
+		    		 <br>
+				    <strong>Meme Coins: The Gateway to Big Ideas</strong><br>
+				    Ever dreamed of launching your own crypto coin?<br>
+				    With platforms like <strong>Pump.fun</strong>, <strong>Moonshot</strong>, or <strong>Meteora</strong>, you can mint a meme coin for just a few bucks!<br>
+				    We're using these coins as a stepping stone to something bigger,... think <em>real-world asset tokenization</em>.<br>
+			    	 <br>
+				    <strong>Tokenizing the Future, Affordably</strong><br>
+				    Tokenizing assets on blockchains like Ethereum can cost a fortune.<br>
+				    But we're exploring smarter, cheaper ways, like using the <strong>Ripple Ledger</strong> for cost-effective tokenization.<br>
+				    Our goal? To make fractional ownership of real-world assets, like property, accessible to everyday adventurers like you.<br>
+				    <br>
+				    <strong>A Legacy in Real Estate</strong><br>
+				    Our founder has been building dreams since the mid-90s, from cozy family homes to luxury hotels, holiday resorts and private game lodges.<br>
+				    We believe <strong>property ownership</strong> is the cornerstone of wealth!<br>
+				    We're here to help you get in on the action through innovative tokenization.<br>
+				    <br>
+				    <strong>Why This Matters to You</strong><br>
+				    This website isn't just a platform, it's a movement.<br>
+				    We're paving the way for anyone with a vision to tokenize assets, create wealth, and own a piece of the future.<br>
+				    Whether you're curious about meme coins, real estate, or just love a good underdog story, you're in the right place!<br>
+				    <br>
+				    <strong>Ready to join the adventure? Explore, dream big, and let's tokenize the world together!</strong><br>
+				    <img src="Uploads/3palm_logo.png" alt="Inspirational crypto and real estate graphic" width="200" height="150"></font></p>
+                 		<div id="closeBtn" align="center">
+                			<button onclick="closeInformation()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"><b>Close</b></button>
+                		</div>
+          		
+				</div>
+        </div>
+
+     
+
+        <!-- Footer Text -->
+		 <footer>
+			<div style="display: flex; width: 100%; margin-bottom: 20px;">
+  						<div style="width: 100%; text-align: left; flex-shrink: 0;">		
+       	 			<p style="font-family: Tahoma; font-size: 14px; text-align: left; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
+       	 			<font color="#000080"><b>
+            			Panorama Global | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
+        				</p>
+      					<p style="font-family: Tahoma; font-size: 14px; text-align: center; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
+            			This website is the property of Panorama Global investments IBC, copyright 2025
+						</b>
+						</font>
+        				</p>        				
+        				</div>
+   			</div>
+        </footer>
+
+    	<!-- Commercial Rental Placeholders -->
+    	<div class="commercial-sidebar">
+        	<div class="commercial-placeholder1">
+            <a href="https://www.linktr.ee/Name" target="_blank">
+                Contact owner to advertise your business here! USD500 /Month
+            </a>
+        	</div>
+        	<div class="commercial-placeholder2">
+            <a href="https://www.linktr.ee/Name" target="_blank">
+                Contact owner to advertise your business here! USD300 /Month
+            </a>
+        	</div>
+        	<div class="commercial-placeholder3">
+            <a href="https://www.linktr.ee/Name" target="_blank">
+                Contact owner to advertise your business here! USD200 /Month
+            </a>
+        	</div>
+        <!-- QR Images -->
+			<div class="commercial-placeholder4" style="display: flex; width: 100%; gap: 2px; justify-content: center;">        	
+  					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
+    					<a href="https://linktr.ee/Panorama.Global" target="_blank" rel="nofollow noopener">
+      					<img src="Uploads/panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
+    					</a>
+  					</div>
+ 					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
+    					<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank" rel="nofollow noopener">
+      					<img src="Uploads/coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
+                 		</a>
+  					</div>
+			</div>	
+       	<!--<div class="commercial-placeholder5" style="display: flex; width: 100%; align: center;">
+					<div style="width: 200px; text-align: center; flex-shrink: 0; height: 19">       
+        				<button id="informationBtn" enabled
+              		data-tooltip2="Interesting facts about this Website!"
+              		style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 13px; font-family: Tahoma; font-size: 16px; cursor: pointer; margin-left: 0; margin-right: 0; margin-bottom: 0; margin-top:0"
+              		onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+            			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';"><b>Website Information</b>
+        				</button>
+        			</div>        
+			</div>-->        
+      </div>
+</div>    
+
+    
+    <!-- Inline JavaScript for Wallet, Popup, Logic -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <!--Connect Wallet-->
+    <!-- Solana Web3.js -->
+    <script src="https://unpkg.com/@solana/web3.js@1.95.3/dist/index.min.js"></script>
+    
+
+
+    <!--White paper-->
+    <!-- Inline JavaScript for Popup and Button Logic -->
+    <script>
+	     // Event listeners
+        const whiteBtn = document.getElementById('whiteBtn');
+        const whitepaperPopup = document.getElementById('whitepaperPopup');
+        whiteBtn.addEventListener('click', () => {whitepaperPopup.style.display = 'block';});
+    		closewhiteBtn.addEventListener('click', () => {
+        	whitepaperPopup.style.display = 'none';
+    		});
+
+    </script>
+    <!-- Site info function-->
+    <script>
+        const informationBtn = document.getElementById('informationBtn');
+        const informationPopup = document.getElementById('informationPopup');
+        informationBtn.addEventListener('click', () => {informationPopup.style.display = 'block';});
+        function closeInformation() {informationPopup.style.display = 'none';}
+    </script>
+    <!--Share button functions -->
+    
+    <script>
+        const shareBtn = document.getElementById('shareBtn');
+        const fallback = document.getElementById('fallback');
+        const copyUrl = document.getElementById('copyUrl');
+
+        // Customize these for your content
+        const shareData = {
+            title: 'Check out this awesome page!',  								// e.g., document.title
+            text: 'I found this interesting content – sharing it with you!',  	// Optional description
+            url: window.location.href  												// Current page URL (or a specific one)
+        };
+
+        shareBtn.addEventListener('click', async () => {
+            if (navigator.share) {  // Check support
+                try {
+                    await navigator.share(shareData);
+                    console.log('Sharing successful!');  // Optional: Handle success
+                } catch (error) {
+                    if (error.name !== 'AbortError') {  // Ignore if user cancels
+                        console.error('Error sharing:', error);
+                        showFallback();
+                    }
+                }
+            } else {
+                showFallback();
+            }
+        });
+
+        function showFallback() {
+            fallback.style.display = 'block';
+            //shareBtn.disabled = true;
+        }
+
+        // Fallback: Copy URL to clipboard
+        copyUrl.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                await navigator.clipboard.writeText(shareData.url);
+                alert('URL copied to clipboard!');
+                 fallback.style.display = 'none';
+            } catch (err) {
+                console.error('Failed to copy:', err);
+
+                // Older fallback for clipboard
+                const textArea = document.createElement('textarea');
+                textArea.value = shareData.url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('URL copied to clipboard!');
+            }
+        });
+    </script>    
+
+
+</body>
+</html>

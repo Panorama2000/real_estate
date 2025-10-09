@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #4A5A66;
+            background-color: #C0C0C0;
             font-family: Tahoma, Verdana, sans-serif;
             scroll-behavior: smooth; /* Optional: Smooth scrolling if you add manual scroll later */
         }
@@ -296,61 +296,125 @@
       
 		<div style="display: flex; width: 100%; margin-bottom: 10px;">
   			<div style="width: 300px; text-align: left; flex-shrink: 0;">
-    			<img src="Uploads/panorama_logo2.jpg" alt="VISTA Coin Logo" style="border: 0; width: 300px; height: 300px;">
+    			<img src="panorama_logo2.jpg" alt="VISTA Coin Logo" style="border: 0; width: 300px; height: 300px;">
   			</div>
-  			<div style="flex-grow: 1; padding-left: 20px;">
-    			<p style="font-family: Tahoma; font-size: 36px; margin: 10px 0;">[Welcome Text Placeholder]</p>
-    			<p style="font-family: Tahoma; font-size: 36px; margin: 10px 0;">[About Text Placeholder]</p>
-    			<p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">[Summary 1 Placeholder]</p>
-    			<p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">[Summary 2 Placeholder]</p>
-    			<p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">[Summary 3 Placeholder]</p>
-    			<p style="font-family: Tahoma; font-size: 18px; margin: 10px 0;">[Summary 4 Placeholder]</p>
-    			<div style="flex-grow: 1; padding-left: 20px;">
-                    <a href="https://t.me/PanoramaGlobal" target="_blank">
-                        <button style="background-color: white; border: 2px solid #007bff; padding: 10px; cursor: pointer;"
-                            data-tooltip2="Telegram!"                            
-                                onmouseover="this.style.backgroundColor='lightblue'; this.style.borderColor='#007bff';"
-                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#007bff';">
-                            <img src="icon_telegramlogo2.png" alt="" width="32" height="32">
-                        </button>
-                    <a href="https://za.pinterest.com/PalmVentures/palm-ventures" target="_blank">
-                        <button style="background-color: white; border: 2px solid red; padding: 10px; cursor: pointer;"
-                            data-tooltip2="Pintrest!"                              
-                                onmouseover="this.style.backgroundColor='#ffcccc'; this.style.borderColor='red';"
-                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='red';">
-                            <img src="icon_pintrestlogo2.png" alt="" width="32" height="32">
-                        </button>
-                    </a>
-                    <a href="https://linktr.ee/Panorama.Global" target="_blank">
-                        <button style="background-color: white; border: 2px solid #004d00; padding: 10px; cursor: pointer;"
-                            data-tooltip2="Linktree!"                              
-                                onmouseover="this.style.backgroundColor='#90EE90'; this.style.borderColor='#004d00';"
-                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#004d00';">
-                            <img src="icon_limktreelogo2.png" alt="" width="32" height="32">
-                        </button>
-                    </a>                	                    	    			
-                    <a href="https://www.x.com/PalmVentures" target="_blank">
-                        <button style="background-color: white; border: 2px solid black; padding: 10px; cursor: pointer;"
-                            data-tooltip2="X.com!"                              
-                                onmouseover="this.style.backgroundColor='grey'; this.style.borderColor='black';"
-                                onmouseout="this.style.backgroundColor='white'; this.style.borderColor='black';">
-                            <img src="icon_xlogo2.png" alt="" width="32" height="32">
-                        </button>
-                    </a>
-    			</div>
+  			<div style="width: 540px; text-align: left; flex-shrink: 0; padding-left: 20px">
+  				<p style="font-family: Tahoma; font-size: 24px; margin: 0px 0;">
+  					<font color="navy">
+  					Welcome to Panorama Global Properties
+  					</font>
+  				</p>
+  				<p style="font-family: Tahoma; font-size: 20px; margin: 0px 0;">
+  					<font color="navy">Your gateway to the future of real estate investment.</font>
+    			</p>
+  				<p style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 0px; margin-bottom: 0px">
+  					<font face="Tahoma" size="3" color="black">
+  					We're revolutionizing property ownership through blockchain innovation,<br>
+  					making premium global assets accessible to everyone.<br>
+  					Tokenize, stake, and grow your portfolio with Vista coin.<br>
+  					Discover how simple it is to own a piece of the world, without borders or barriers.<br>
+    				At Panorama Global Properties, 
+    				we bridge traditional real estate with cutting-edge blockchain technology to democratize wealth creation.<br>
+					Founded on the principles of transparency, security, and global reach, our platform tokenizes under valued properties.
+					</font>
+    			</p>
   			</div>
+  			<div style="width: 240px; text-align: right; flex-shrink: 0; padding-right: 10px; padding-bottom: 20px;">
+    				<div style="flex-grow: 1; padding-right: 10px; margin: 0 0 10px 0;">
+  							<p align="center"><font face="Tahoma" size="6" color="navy">Share Page</font></p>
+  							<img src="handeyes.gif" alt="waving hand" width="130px" style="display: block; margin: 0 auto 10px auto; align: center">   
+     					<button id="shareBtn" enabled
+                        data-tooltip="Read our White Paper First!"
+                        data-tooltip2="Share with others!"                         
+          					style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 5px; font-family: Tahoma; font-size: 16px; cursor: pointer; width: 240px;"
+          					onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  		onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">     						
+    						<b>Share</b>
+    					</button>
+    				</div>
+ 					<div id="fallback" style="width: 240px; display: none; text-align: left; margin: 0 0 0 0; font-family: Tahoma; font-size: 14px;">          
+        				<p align="left" style="line-height: 150%; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 20px"><font size="3" face="Tahoma"><font color="navy">Native sharing not supported.</font><br>
+        				<a href="#" id="copyUrl"><font face="Tahoma" size="3" color="#000000">Click Here!</font></a><br>
+                     <font color="navy">to copy URL and</font><br>
+                     <font color="navy">Share manually.</font>
+        				</p>
+    				</div>
+  					<div style="flex-grow: 1; padding-right: 10px; width: 240px">
+                 		<a href="https://t.me/PanoramaGlobal" target="_blank">
+                     <button style="background-color: white; border: 2px solid #007bff; padding: 10px; cursor: pointer;"
+                          data-tooltip2="Telegram!"                            
+                          onmouseover="this.style.backgroundColor='lightblue'; this.style.borderColor='#007bff';"
+                          onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#007bff';">
+                         <img src="icon_telegramlogo2.png" alt="" width="32" height="32">
+                     </button>
+                 		</a>
+                 		<a href="https://za.pinterest.com/PalmVentures/palm-ventures" target="_blank">
+                     <button style="background-color: white; border: 2px solid red; padding: 10px; cursor: pointer;"
+                          data-tooltip2="Pintrest!"                              
+                          onmouseover="this.style.backgroundColor='#ffcccc'; this.style.borderColor='red';"
+                          onmouseout="this.style.backgroundColor='white'; this.style.borderColor='red';">
+                         <img src="icon_pintrestlogo2.png" alt="" width="32" height="32">
+                     </button>
+                 		</a>
+                 		<a href="https://linktr.ee/Panorama.Global" target="_blank">
+                     <button style="background-color: white; border: 2px solid #004d00; padding: 10px; cursor: pointer;"
+                          data-tooltip2="Linktree!"                              
+                          onmouseover="this.style.backgroundColor='#90EE90'; this.style.borderColor='#004d00';"
+                          onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#004d00';">
+                         <img src="icon_limktreelogo2.png" alt="" width="32" height="32">
+                     </button>
+                 		</a>                	                    	    			
+                 		<a href="https://www.x.com/PalmVentures" target="_blank">
+                     <button style="background-color: white; border: 2px solid black; padding: 10px; cursor: pointer;"
+                          data-tooltip2="X.com!"                              
+                          onmouseover="this.style.backgroundColor='grey'; this.style.borderColor='black';"
+                          onmouseout="this.style.backgroundColor='white'; this.style.borderColor='black';">
+                         <img src="icon_xlogo2.png" alt="" width="32" height="32">
+                     </button>
+                 		</a>
+           		</div>
+    		 </div>
 		</div>       		        		
-        
+       
+		<div style="display: flex; width: 100%; margin-bottom: 10px;">
+  			<div style="width: 590px; text-align: left; flex-shrink: 0;">
+  				<p style="font-family: Tahoma; font-size: 20px; margin: 0px 0;">
+  					<font color="navy">Buy Vista Coin Today</font>
+  				</p>
+  				<p style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
+  					<font face="Tahoma" size="3" color="black">
+					Power your portfolio with Vista, our utility token for property investments.
+					Purchase seamlessly via pumpfun and start earning from day one.<br> 
+					Low entry barriers, high upside  will turn crypto into concrete assets with real-world value.<br>
+  					Stake for Passive Income
+					Lock in Vista coins and benefit from the discounted access to the RWA tokens on the Ripple ledger later.<br>
+					Earn 6% APYs through our staking pools, backed by renovated property resales.
+					Secure, automated, and scalable.
+					Stake now to compound your real estate exposure without lifting a finger.<br>
+					Vista holders lead the charge in shaping tomorrow's skyline.
+					</font>
+				</p>
+			</div>
+  			<div style="width: 500px; text-align: left; flex-shrink: 0; padding-left: 10px; padding-right: 10px;">
+            		<video border="1" src="pgp1.mp4" type="video/mp4" width="500" height="auto" align="top" controls autoplay loop muted>
+                		<source src="pgp1.mp4" type="video/mp4">
+                		Your browser does not support the video tag.
+            		</video>
+			</div>			
+		</div>
+		
+		
         <!-- Personalized Welcome Message -->
         <p id="welcomeMessage" style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0; display: none;">
-            Welcome Guest! It’s good to have you visit us! Do you have $VISTA coins or do you need to purchase?
+            <font color="#000080">
+            Welcome Guest! It’s good to have you visit us! Do you have $VISTA coins or do you need to purchase?</font>
         </p>
         
 
       
         <!-- Whitepaper Popup -->
         <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%; z-index: 1000;">
-            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">  
+            <embed src="white-paper.pdf" type="application/pdf" width="600" height="400">  
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
                 <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
@@ -378,7 +442,7 @@
                 	<h2 align="center">Fun Facts About This Website!</h2>
                 
              			<div id="image" align="center">
-                			<img src="Uploads/blockchain_logo10.jpg" alt="Inspirational crypto and real estate graphic" style="max-width: 100%; width: 400px; height: auto; border-radius: 10px ; margin: 15px 0">
+                			<img src="blockchain_logo10.jpg" alt="Inspirational crypto and real estate graphic" style="max-width: 100%; width: 400px; height: auto; border-radius: 10px ; margin: 15px 0">
                 		</div>
 				    <p style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 1; margin-bottom: 0">
                   <font face="Arial">
@@ -434,12 +498,13 @@
 			<div style="display: flex; width: 100%; margin-bottom: 20px;">
   						<div style="width: 100%; text-align: left; flex-shrink: 0;">		
        	 			<p style="font-family: Tahoma; font-size: 14px; text-align: left; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
-       	 			<b>
+       	 			<font color="#000080"><b>
             			Panorama Global | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
         				</p>
       					<p style="font-family: Tahoma; font-size: 14px; text-align: center; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
             			This website is the property of Panorama Global investments IBC, copyright 2025
 						</b>
+						</font>
         				</p>        				
         				</div>
    			</div>
@@ -466,12 +531,12 @@
 			<div class="commercial-placeholder4" style="display: flex; width: 100%; gap: 2px; justify-content: center;">        	
   					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
     					<a href="https://linktr.ee/Panorama.Global" target="_blank" rel="nofollow noopener">
-      					<img src="Uploads/panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
+      					<img src="panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
     					</a>
   					</div>
  					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
     					<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank" rel="nofollow noopener">
-      					<img src="Uploads/coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
+      					<img src="coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
                  		</a>
   					</div>
 			</div>	
@@ -561,15 +626,72 @@
         riskCheckbox.addEventListener('change', checkCheckboxes);
     });
     </script>
+    
     <!-- Site info function-->
     <script>
-
         const informationBtn = document.getElementById('informationBtn');
         const informationPopup = document.getElementById('informationPopup');
         informationBtn.addEventListener('click', () => {informationPopup.style.display = 'block';});
         function closeInformation() {informationPopup.style.display = 'none';}
-
     </script>
+    
+    <!--Share button functions -->
+    <script>
+        const shareBtn = document.getElementById('shareBtn');
+        const fallback = document.getElementById('fallback');
+        const copyUrl = document.getElementById('copyUrl');
+
+        // Customize these for your content
+        const shareData = {
+            title: 'Check out this awesome page!',  								// e.g., document.title
+            text: 'I found this interesting content – sharing it with you!',  	// Optional description
+            url: window.location.href  												// Current page URL (or a specific one)
+        };
+
+        shareBtn.addEventListener('click', async () => {
+            if (navigator.share) {  // Check support
+                try {
+                    await navigator.share(shareData);
+                    console.log('Sharing successful!');  // Optional: Handle success
+                } catch (error) {
+                    if (error.name !== 'AbortError') {  // Ignore if user cancels
+                        console.error('Error sharing:', error);
+                        showFallback();
+                    }
+                }
+            } else {
+                showFallback();
+            }
+        });
+
+        function showFallback() {
+            fallback.style.display = 'block';
+            //shareBtn.disabled = true;
+        }
+
+        // Fallback: Copy URL to clipboard
+        copyUrl.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                await navigator.clipboard.writeText(shareData.url);
+                alert('URL copied to clipboard!');
+                 fallback.style.display = 'none';
+            } catch (err) {
+                console.error('Failed to copy:', err);
+
+                // Older fallback for clipboard
+                const textArea = document.createElement('textarea');
+                textArea.value = shareData.url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('URL copied to clipboard!');
+            }
+        });
+    </script>    
+
+</font>    
 
 </body>
 </html>

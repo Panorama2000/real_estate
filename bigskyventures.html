@@ -527,37 +527,6 @@
 				</div>
 			</div> 
 
-
-       
-
-       
-
-        <!-- Whitepaper Popup -->
-        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
-            <embed src="white-paper.pdf" type="application/pdf" width="600" height="400">
-            <div style="margin-top: 10px;">
-                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
-                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
-                <button onclick="closePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">
-                Close</button>
-            </div>
-        </div>
-        
-        <!-- Gallery Placeholder -->
-        <!-- Gallery Table -->
-        	<!--<table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
-            <tr>
-                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
-                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
-                </td>
-                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
-                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
-                </td>
-            </tr>
-        	</table>--> 
-        <!-- End of Gallery Table -->
-      
-        
         <!-- Info Popup -->
         <div id="informationPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
 				<div style="
@@ -638,14 +607,13 @@
 				 </div>
 			</div>
 			
-
         <!-- Footer Text -->
 		 <footer>
 			<div style="display: flex; width: 100%; margin-bottom: 20px;">
   						<div style="width: 100%; text-align: left; flex-shrink: 0;">		
        	 			<p style="font-family: Tahoma; font-size: 14px; text-align: left; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
        	 			<b>
-            			Panorama Global | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
+            			Big Sky ventures | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
         				</p>
       					<p style="font-family: Tahoma; font-size: 14px; text-align: center; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
             			This website is the property of Panorama Global investments IBC, copyright 2025
@@ -677,7 +645,7 @@
         <!-- QR Images -->
 			<div class="commercial-placeholder4" style="display: flex; width: 100%; gap: 2px; justify-content: center;">        	
   					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
-    					<a href="https://linktr.ee/BigSky.Ventures" target="_blank" rel="nofollow noopener">
+    					<a href="https://linktr.ee/Panorama.Global" target="_blank" rel="nofollow noopener">
       					<img src="panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
     					</a>
   					</div>
@@ -686,71 +654,31 @@
       					<img src="coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
                  		</a>
   					</div>
-			</div>	
-
+			</div     
     </div>
-</div><!--Container end-->
+</div>    
+<!--Container end-->
 
     
     <!-- Inline JavaScript for Popup and Button Logic -->
 
 	<!--Report function-->
     <script>
-    	
-    	 const readMore = document.getElementById('readMore');
-       const reportPopup = document.getElementById('reportPopup');
-       readMore.addEventListener('click', () => {reportPopup.style.display = 'block';});
-       function closeReport() {reportPopup.style.display = 'none';} 
-             
+    	const readMore = document.getElementById('readMore');
+       	const reportPopup = document.getElementById('reportPopup');
+      	readMore.addEventListener('click', () => {reportPopup.style.display = 'block';});
+       	function closeReport() {reportPopup.style.display = 'none';} 
     </script>
 
 	<!-- Site information button function-->
     <script>
-
         const informationBtn = document.getElementById('informationBtn');
         const informationPopup = document.getElementById('informationPopup');
         informationBtn.addEventListener('click', () => {informationPopup.style.display = 'block';});
         function closeInformation() {informationPopup.style.display = 'none';}
-
     </script>
-    
-	<!--White paper button Function-->    
-    <script>
-        const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const stakingBtn = document.getElementById('stakingBtn');
-        const whitepaperPopup = document.getElementById('whitepaperPopup');
-        const readCheckbox = document.getElementById('readCheckbox');
-        const riskCheckbox = document.getElementById('riskCheckbox');
 
-        whitepaperBtn.addEventListener('click', () => {
-            whitepaperPopup.style.display = 'block';
-        });
-
-        function closePopup() {
-            whitepaperPopup.style.display = 'none';
-        }
-
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                stakingBtn.disabled = false;
-                stakingBtn.style.opacity = '1';
-                stakingBtn.style.cursor = 'pointer';
-                stakingBtn.onclick = () => {
-                    window.location.href = 'staking.html';
-                };
-            } else {
-                stakingBtn.disabled = true;
-                stakingBtn.style.opacity = '0.5';
-                stakingBtn.style.cursor = 'not-allowed';
-            }
-        }
-
-        readCheckbox.addEventListener('change', checkCheckboxes);
-        riskCheckbox.addEventListener('change', checkCheckboxes);
-    </script>
-    
-
-        <!--Email popup-->
+    <!--Email popup-->
     <script>
   		function openPopup(id) {
     		document.getElementById(id).style.display = 'block';
@@ -779,4 +707,5 @@
 </body>
 
 </html>
+
 

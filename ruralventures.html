@@ -523,38 +523,6 @@
 				</div>
 			</div> 
 
-
-
-        <!-- Whitepaper Popup -->
-        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
-            <embed src="white-paper.pdf" type="application/pdf" width="600" height="400">
-            <div style="margin-top: 10px;">
-                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
-                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
-                <button onclick="closePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">Close</button>
-            </div>
-        </div>
-        
-        <!-- Gallery Placeholder -->
-        <!-- Gallery Table -->
-        	<!--<table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
-            <tr>
-                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
-                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
-                </td>
-                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
-                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
-                </td>
-            </tr>
-        	</table>--> 
-        <!-- End of Gallery Table -->
-      
-       
-
-        <p style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0;">
-            Rural Ventures | Ripple Ledger | XRP | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
-        </p>
-        
         <!-- Info Popup -->
         <div id="informationPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
 				<div style="
@@ -642,7 +610,7 @@
   						<div style="width: 100%; text-align: left; flex-shrink: 0;">		
        	 			<p style="font-family: Tahoma; font-size: 14px; text-align: left; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
        	 			<b>
-            			Panorama Global | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
+            			Rural Ventures | Ripple Ledger | XRP |Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization | Crypto Staking
         				</p>
       					<p style="font-family: Tahoma; font-size: 14px; text-align: center; line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
             			This website is the property of Panorama Global investments IBC, copyright 2025
@@ -666,29 +634,23 @@
         </div>
         <div class="commercial-placeholder3" style="width: 200; height: 100">
             <a href="mailto:panorama.2018@proton.me" target="_blank">
-                  Contact owner to advertise your business here! USD200/Month
+                Contact owner to advertise your business here! USD200/Month
             </a>
         </div>
         
-        <div class="commercial-placeholder4" style="width: 200; height: 100">
-        <!-- QR and Coin Images -->
-        	  <table style="width: 100%; margin: 0 0;">
-            <tr>
-            <td style="width: 50%; height: 100px; text-align: center; vertical-align: middle;">
-                 <a href="https://linktr.ee/Rural.Venture" target="_blank">
-                     <img src="palmventures_qr.png" alt="Palm Ventures | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto  Staking" 
-                          title="Palm Ventures | Crypto Investment" style="max-width: 98%; height: Auto;">
-                 </a>
-            </td>
-            <td style="width: 50%; height: 100px; text-align: center; vertical-align: middle;">
-                 <a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank">
-                     <img src="coin7.jpg" alt="$VISTA | Crypto Investment | $RWT | Venture Capital | Blockchain | Real World Property Tokenization |Palm Ventures | Crypto Staking  | Gold Crypto Coin with Palm tree | Veni Vedi Vici" 
-                          title="$VISTA | Golden Crypto Coin" style="max-width: 98%; height: auto;">
-                 </a>
-             </td>
-             </tr>
-             </table>
-        </div>        
+        <!-- QR Images -->
+			<div class="commercial-placeholder4" style="display: flex; width: 100%; gap: 2px; justify-content: center;">        	
+  					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
+    					<a href="https://linktr.ee/Panorama.Global" target="_blank" rel="nofollow noopener">
+      					<img src="panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
+    					</a>
+  					</div>
+ 					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
+    					<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank" rel="nofollow noopener">
+      					<img src="coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
+                 		</a>
+  					</div>
+			</div     
     </div>
 </div>    
 <!--Container end-->
@@ -698,12 +660,10 @@
 
 	<!--Report function-->
     <script>
-    	
-    	const readMmore = document.getElementById('readMore');
+	   	const readMmore = document.getElementById('readMore');
        const reportPopup = document.getElementById('reportPopup');
        readMore.addEventListener('click', () => {reportPopup.style.display = 'block';});
        function closeReport() {reportPopup.style.display = 'none';} 
-             
     </script>
 
 	<!-- Site information button function-->
@@ -715,43 +675,9 @@
         function closeInformation() {informationPopup.style.display = 'none';}
 
     </script>
+
     
-	<!--White paper button Function-->    
-    <script>
-        const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const stakingBtn = document.getElementById('stakingBtn');
-        const whitepaperPopup = document.getElementById('whitepaperPopup');
-        const readCheckbox = document.getElementById('readCheckbox');
-        const riskCheckbox = document.getElementById('riskCheckbox');
-
-        whitepaperBtn.addEventListener('click', () => {
-            whitepaperPopup.style.display = 'block';
-        });
-
-        function closePopup() {
-            whitepaperPopup.style.display = 'none';
-        }
-
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                stakingBtn.disabled = false;
-                stakingBtn.style.opacity = '1';
-                stakingBtn.style.cursor = 'pointer';
-                stakingBtn.onclick = () => {
-                    window.location.href = 'staking.html';
-                };
-            } else {
-                stakingBtn.disabled = true;
-                stakingBtn.style.opacity = '0.5';
-                stakingBtn.style.cursor = 'not-allowed';
-            }
-        }
-
-        readCheckbox.addEventListener('change', checkCheckboxes);
-        riskCheckbox.addEventListener('change', checkCheckboxes);
-    </script>
-    
-        <!--Email popup-->
+	<!--Email popup-->
     <script>
   		function openPopup(id) {
     		document.getElementById(id).style.display = 'block';
@@ -777,8 +703,3 @@
 		</script>
     
 </body>
-
-
-
-
-

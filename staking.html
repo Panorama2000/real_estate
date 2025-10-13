@@ -530,22 +530,28 @@
   					</div>
 
   					<!-- Step 3 -->
- 					<div class="step" align="center">
+  					<div class="step" align="center">
     					<h3 align="left" style="line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
-    					Step 3 - Bridge USDC (Solana &#8594; Ethereum)</h3>
+    					Step 3 - Bridge USDC from SOL to ETH</h3>
 						<p style="line-height: 100%; margin-left: 0; margin-right: 0; margin-top: 2; margin-bottom: 2">
-						Use Wormhole Connect to bridge your USDC from Solana to Ethereum.</p>
-    					<!--<iframe 
-    						src="https://connect-in-style.wormhole.com/" 
-    						style="max-width: 100%; width: 700px; height: 500px; border-radius: 10px ; margin: 15px 0">
-    					</iframe>-->
-    					<!--<iframe 
-    						src="https://connect.wormhole.com" 
-    						style="max-width: 100%; width: 700px; height: 500px; border-radius: 10px ; margin: 15px 0">
-						</iframe>-->
-						
-						<div id="wormhole-bridge-container" style="width:700px; height:500px; border-radius:12px; overflow:hidden;"></div>
-  					</div>
+						Bridge Your USDC from Solana Network to Etherium Network</p>
+						 <div style="max-width:100%; width:700px; height:500px; border-radius:15px; border:2px solid #0066FF; 
+           				display:flex; flex-direction:column; justify-content:center; align-items:center; 
+          					background-color:#f9faff; margin:15px auto;"> 
+						 <img src="wormhole_logo.png" alt="Wormhole Bridge" style="width:120px; height:auto; margin-bottom:15px; border-radius:10px;"> 	
+						 <h3 style="margin:5px 0;">Portal Bridge</h3>
+    					 <p style="margin:5px 20px; font-size:14px; color:#333; line-height:1.4;">
+      						Bridge your <b>USDC</b> from <b>Solana</b> to <b>Ethereum</b>.<br>
+      						Click the button below to open the secure Portal Bridge window.<br>
+      						Your migration portal will remain open behind it.
+    					 </p>
+					    <button 
+      						onclick="openWormholePopup()" 
+      						style="background-color:#007bff; color:white; border:2px solid navy; padding:12px 40px; border-radius:10px; font-size:16px; cursor:pointer; margin-top:10px;">
+      						Open Wormhole Bridge
+    					</button>
+						</div>
+					</div>
 
   					<!-- Step 4 -->
   					<div class="step" align="center">
@@ -707,16 +713,8 @@
     };
   	</script>
   
-  	<!--Worm Hole Connect-->
-/*	<script type="module">
-//  		import { wormholeConnectHosted } from "https://www.unpkg.com/@wormhole-foundation/wormhole-connect@latest/dist/hosted/hosted.js";
-//		const container = document.getElementById("wormhole-container");
-//		wormholeConnectHosted(container, {config: {chains: ["Solana", "Ethereum", "Polygon", "Avalanche"],  // example allowed chains
-//		network: "mainnet"
-//		},theme: {mode: "dark"}
-// 		});
-	</script>    
-*/
+  
+
 	<!-- HOSTED SCRIPT -->
 	<script type="module">
   import { wormholeConnectHosted } from "https://unpkg.com/@wormhole-foundation/wormhole-connect@latest";
@@ -731,6 +729,21 @@
     theme: { mode: "dark" }
   });
 	</script>
+	
+		<script>
+		function openWormholePopup() {
+		  const width = 800;           // same feel as your 700px iframes
+		  const height = 600;
+		  const left = (screen.width - width) / 2;
+		  const top = (screen.height - height) / 2;
+		  window.open(
+		    "https://portalbridge.com/usdc-bridge#/transfer?sourceChain=solana&token=USDC&targetChain=ethereum&token=USDC",
+		    "WormholeBridge",
+		    `width=${width},height=${height},top=${top},left=${left},
+		     resizable=yes,scrollbars=yes,status=no`
+		  );
+		}
+		</script>
 
 </body>
 </html>

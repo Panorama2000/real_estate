@@ -526,36 +526,7 @@
 					</p>
 				</div>
 			</div> 
-
        
-
-       
-
-        <!-- Whitepaper Popup -->
-        <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white;  padding: 20px; border: 2px solid navy; max-width: 80%;">
-            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">
-            <div style="margin-top: 10px;">
-                <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
-                <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
-                <button onclick="closePopup()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 5px 10px; margin-top:  10px;">Close</button>
-            </div>
-        </div>
-        
-        <!-- Gallery Placeholder -->
-        <!-- Gallery Table -->
-        	<!--<table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
-            <tr>
-                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
-                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
-                </td>
-                <td style="width: 50%;  height: 400px; padding: 05px; text-align: center; vertical-align: middle; background-color: #f0f0f0; border: 1px solid navy;">
-                    <p style="font-family: Tahoma; font-size: 16px;">Gallery Image Placeholder</p>
-                </td>
-            </tr>
-        	</table>--> 
-        <!-- End of Gallery Table -->
-      
-        
         <!-- Info Popup -->
         <div id="informationPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
 				<div style="
@@ -707,42 +678,6 @@
         function closeInformation() {informationPopup.style.display = 'none';}
 
     </script>
-    
-	<!--White paper button Function-->    
-    <script>
-        const whitepaperBtn = document.getElementById('whitepaperBtn');
-        const stakingBtn = document.getElementById('stakingBtn');
-        const whitepaperPopup = document.getElementById('whitepaperPopup');
-        const readCheckbox = document.getElementById('readCheckbox');
-        const riskCheckbox = document.getElementById('riskCheckbox');
-
-        whitepaperBtn.addEventListener('click', () => {
-            whitepaperPopup.style.display = 'block';
-        });
-
-        function closePopup() {
-            whitepaperPopup.style.display = 'none';
-        }
-
-        function checkCheckboxes() {
-            if (readCheckbox.checked && riskCheckbox.checked) {
-                stakingBtn.disabled = false;
-                stakingBtn.style.opacity = '1';
-                stakingBtn.style.cursor = 'pointer';
-                stakingBtn.onclick = () => {
-                    window.location.href = 'staking.html';
-                };
-            } else {
-                stakingBtn.disabled = true;
-                stakingBtn.style.opacity = '0.5';
-                stakingBtn.style.cursor = 'not-allowed';
-            }
-        }
-
-        readCheckbox.addEventListener('change', checkCheckboxes);
-        riskCheckbox.addEventListener('change', checkCheckboxes);
-    </script>
-    
 
         <!--Email popup-->
     <script>
@@ -772,6 +707,7 @@
     
 </body>
 </html>
+
 
 
 

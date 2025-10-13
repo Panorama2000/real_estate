@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #4A5A66;
+            background-color: #C0C0C0;
             font-family: Tahoma, Verdana, sans-serif;
             scroll-behavior: smooth; /* Optional: Smooth scrolling if you add manual scroll later */
         }
@@ -171,10 +171,38 @@
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
                 cursor: pointer;
         }
-        </style>
-
-      
+        
+        
+        #fallback {margin-top: 20px; color: #666;}
+    </style>
     
+    <style>
+ 	/* Popup container */
+
+    /* Responsive design */
+    @media (max-width: 600px) {#informationPopup {width: 95%; top: 2%; height: 90vh; max-height: 95vh;}
+    .informationPopup {max-height: calc(90vh - 120px);}
+    /* Custom scrollbar for better look (optional) */    
+    .informationPopup::-webkit-scrollbar {width: 10px;}
+    .informationPopup::-webkit-scrollbar-track {background: #f1f1f1;}
+    .informationPopup::-webkit-scrollbar-thumb {background: #888; border-radius: 15px;}
+    .informationPopup::-webkit-scrollbar-thumb:hover {background: #555;}
+
+	/* Report Popup */
+	
+	    /* Responsive design */
+    @media (max-width: 600px) {#reportPopup {width: 95%; top: 2%; height: 90vh; max-height: 95vh;}
+    .reportPopup {max-height: calc(90vh - 120px);}
+    /* Custom scrollbar for better look (optional) */    
+    .reportPopup::-webkit-scrollbar {width: 10px;}
+    .reportPopup::-webkit-scrollbar-track {background: #f1f1f1;}
+    .reportPopup::-webkit-scrollbar-thumb {background: #888; border-radius: 15px;}
+    .reportPopup::-webkit-scrollbar-thumb:hover {background: #555;}
+
+    </style>
+    
+
+	<script>window.onload=function(){window.scrollTo(0,0);}</script>
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
@@ -192,7 +220,7 @@
       
 
         <!-- Banner -->
-         <img border="0" src="Uploads/panoramabanner19.jpg" width="1100" height="350">
+         <img border="0" src="panoramabanner19.jpg" width="1100" height="350">
        
         <!-- Title -->
         <div class="heading">
@@ -293,27 +321,39 @@
         				</div>
 			</div>        
 
-      
-		<div style="display: flex; width: 100%; margin-bottom: 10px; margin-top: 10px">
+      	<!--Start-->
+		<div style="display: flex; width: 100%; margin-bottom: 10px; margin-top: 10px; gap: 06px; max-width: 1090">
+			<!--Colomn1-->
   			<div style="width: 300px; text-align: left; flex-shrink: 0;">
-    			<img src="Uploads/panorama_logo2.jpg" alt="VISTA Coin Logo" style="border: 0; width: 300px; height: 300px;" width="720" height="960">
-  			</div>
-  			<div style="flex-grow: 1; padding-left: 20px";>
+    			<img src="panorama_logo2.jpg" alt="VISTA Coin Logo" style="border: 0; width: 300px; height: 400px; align: top">
+    			
+    			<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+            		<video border="1" src="uploads/palmventures_av1.mp4" type="video/mp4" width="300" height="400" align="top" controls autoplay loop muted>
+                		<source src="palmventures_av1.mp4" type="video/mp4">
+                		Your browser does not support the video tag.
+            		</video>
+            		
+    			<!--<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+            		<video border="1" src="uploads/palmventures_av1.mp4" type="video/mp4" width="300" height="400" align="top" controls autoplay loop muted>
+                		<source src="palmventures_av1.mp4" type="video/mp4">
+                		Your browser does not support the video tag.
+            		</video>-->	
 
-                 <p align="left"><font face="Verdana" size="6"><b>Property Ecosystems of Interest</b></font><br>
-    				<ul>
-    				<li>Areas</li>
-    				<li>prices</li>    				
-    				<li>property Reports</li>
-    				[links to four cosystems]<br>
-    				[links to main property report]<br>
-    				[link to main suitability table]<br>
-    				[property golden list]<br>
-    				[Property qualifications]<br>
-    				[Life style investments]
-    				</ul>
-    				<div style="display: flex; width: 100%; margin-bottom: 10px; margin-top: 10px; gap: 06px;">
-  						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">		
+  			</div>
+  	
+  			
+  			<!--Colomn 2-->
+			<div style="display: flex; width: 100%; margin-bottom: 5px; margin-top: 5px; gap: 06px; padding: 05px; align: center">
+  				<div style="width: auto; text-align: left; flex-shrink: 0;">
+          				<p align="center" style="line-height: 100%; margin-top: 2; margin-bottom: 2">
+          				<font face="Verdana" size="5">
+          				<b>Property Ecosystems of Interest</b>
+          				</font>
+          				</p>
+          		<d/div>
+                   		
+				<div style="display: flex; width: 778px; margin-bottom: 5px; margin-top: 5px; gap: 06px; padding: 5px; align: center">
+						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">		
                         <a href="palmventures.html">
                         <button id="plmBtn" enabled
                             data-tooltip="Read our White Paper First"                         
@@ -322,7 +362,7 @@
                   			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                   			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         	<b>Ocean</b>
-                    	</button></a>	
+                    		</button></a>	
           				</div>
           				 			
   						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">		
@@ -334,7 +374,7 @@
                   			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                   			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         	<b>Rural</b>
-                    	</button></a>	
+                    		</button></a>	
           				</div>
           				
   						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">		
@@ -346,7 +386,7 @@
                   			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                   			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         	<b>Mountain</b>
-                    	</button></a>	
+                    		</button></a>	
           				</div>
           				
   						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">		
@@ -358,22 +398,303 @@
                   			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
                   			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">
                         	<b>Big-sky</b>
-                    	</button></a>			
+                    		</button></a>			
           				</div>
-          			</div>	    				
-  			</div>
-		</div>       		        		
-        
-        <!-- Personalized Welcome Message -->
-        <p id="welcomeMessage" style="font-family: Tahoma; font-size: 18px; text-align: left; margin: 20px 0; display: none;">
-            Welcome Guest! It’s good to have you visit us! Do you have $VISTA coins or do you need to purchase?
-        </p>
-        
+				</div>
+                        <hr align="center">
+                        
+				<div style="display: flex; width: 778px; margin-bottom: 5px; margin-top: 5px; gap: 06px; padding: 5px; align: center">
+						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+                     		<img border="1" src="palmventures_logo.png" width="180" height="auto" align="top">				
+						  		<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+								<ul>
+    							<li>Western Cape</li>
+    							<li>Turks & Caicos</li>    				
+    							<li>St Kitts & Nevis</li>
+    							<li>St Vincient & the Grenadines</li>
+    							</ul>
+								</font>
+          				</div>
+          				 			
+  						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+                     		<img border="1" src="palmventures_logo.png" width="180" height="auto" align="top">				
+  						  		<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+								<ul>
+    							<li>Texes West</li>
+    							<li>Chile Patagonia</li>    				
+    							<li>Wester Cape </li>
+    							<li>Montana West</li>
+    							</ul>
+								</font>
+          				</div>
 
-      
+  						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+                     		<img border="1" src="palmventures_logo.png" width="180" height="auto" align="top">					
+						  		<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+								<ul>
+    							<li>Montana West</li>
+    							<li>Chile Patagonia</li>    				
+    							<li>Wyoming</li>
+    							<li> </li>    							
+    							</ul>
+								</font>
+								</p>			
+          				</div>
+          				 			
+  						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+                     		<img border="1" src="palmventures_logo.png" width="180" height="auto" align="top">
+  						  		<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+								<ul>
+    							<li>Texas</li>
+    							<li>Montana</li>    				
+    							<li>Western Cape</li>
+    							<li>Arizona South</li>    							
+    							</ul>
+								</font>
+								</p>			
+          				</div>
+				</div>							
+							
+							<hr align="center">
+							
+				<div style="display: flex; width: 778px; margin-bottom: 5px; margin-top: 5px; gap: 06px; padding: 5px; align: center">
+				
+  						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+  								<b>All Location<br>Property<br>Report!</b>
+									<div id="readMore" style="display: flex; align-items: center; gap: 10px; font-family: Verdana, sans-serif; font-size: 12pt;">
+                     				<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+    									<span style="color: black; cursor: pointer;" 
+          								onmouseover="this.style.color='blue'" 
+          								onmouseout="this.style.color='black'">
+          								<b><u>Click here!</u></b><br>
+    									</span>
+    									<span style="color: black;">
+    									<b>to read more,</b>
+    									</span>
+    									</p>
+									</div>
+									<p style="color: black; cursor: pointer; word-spacing: 0; line-height: 150%; margin: 0" 
+   										onmouseover="this.style.color='blue'" 
+   										onmouseout="this.style.color='black'">
+    									<a href="main-report.pdf" download="main-report.pdf" style="color: inherit; text-decoration: none;">
+        								<b><u>Download here!</u></b>
+    									</a>
+									</p>
+  								</font>
+  								</p>
+          				</div>
+
+          				 			
+  						<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+  								<b>The Propery<br>Golden<br>List!</b>
+									<div id="readMore2" style="display: flex; align-items: center; gap: 10px; font-family: Verdana, sans-serif; font-size: 12pt;">
+                     				<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+    									<span style="color: black; cursor: pointer;" 
+          								onmouseover="this.style.color='blue'" 
+          								onmouseout="this.style.color='black'">
+          								<b><u>Click here!</u></b><br>
+    									</span>
+    									<span style="color: black;">
+    									<b>to read more,</b>
+    									</span>
+    									</p>
+									</div>
+									<p style="color: black; cursor: pointer; word-spacing: 0; line-height: 150%; margin: 0" 
+   										onmouseover="this.style.color='blue'" 
+   										onmouseout="this.style.color='black'">
+    									<a href="golden-list.pdf" download="golden-list.pdf" style="color: inherit; text-decoration: none;">
+        								<b><u>Download here!</u></b>
+    									</a>
+									</p>
+  								</font>
+  								</p>
+          				</div>
+          				
+          				<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+  								<b>Life Style<br>Property<br>Report!</b>
+									<div id="readMore3" style="display: flex; align-items: center; gap: 10px; font-family: Verdana, sans-serif; font-size: 12pt;">
+                     				<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+    									<span style="color: black; cursor: pointer;" 
+          								onmouseover="this.style.color='blue'" 
+          								onmouseout="this.style.color='black'">
+          								<b><u>Click here!</u></b><br>
+    									</span>
+    									<span style="color: black;">
+    									<b>to read more,</b>
+    									</span>
+    									</p>
+									</div>
+									<p style="color: black; cursor: pointer; word-spacing: 0; line-height: 150%; margin: 0" 
+   										onmouseover="this.style.color='blue'" 
+   										onmouseout="this.style.color='black'">
+    									<a href="lsd-report.pdf" download="lsd-report.pdf" style="color: inherit; text-decoration: none;">
+        								<b><u>Download here!</u></b>
+    									</a>
+									</p>
+  								</font>
+  								</p>
+          				</div>
+          				
+          				<div style="width: 25%; text-align: left; flex-shrink: 0; height: 20">
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  								<font face="verdana" size="3" color="black">
+  								<b>Property<br>Qualification<br>List!</b>
+									<div id="readMore4" style="display: flex; align-items: center; gap: 10px; font-family: Verdana, sans-serif; font-size: 12pt;">
+                     				<p style="word-spacing: 0; line-height: 150%; margin-top: 0; margin-bottom: 0">
+    									<span style="color: black; cursor: pointer;" 
+          								onmouseover="this.style.color='blue'" 
+          								onmouseout="this.style.color='black'">
+          								<b><u>Click here!</u></b><br>
+    									</span>
+    									<span style="color: black;">
+    									<b>to read more,</b>
+    									</span>
+    									</p>
+									</div>
+									<p style="color: black; cursor: pointer; word-spacing: 0; line-height: 150%; margin: 0" 
+   										onmouseover="this.style.color='blue'" 
+   										onmouseout="this.style.color='black'">
+    									<a href="qualification-list.pdf" download="qulification-list.pdf" style="color: inherit; text-decoration: none;">
+        								<b><u>Download here!</u></b>
+    									</a>
+									</p>
+  								</font>
+  								</p>
+          				</div>
+				</div>							
+							
+							<hr align="center">
+							
+				<div style="width: 100%; text-align: center; flex-shrink: 0; height: 150px">
+                     		<img border="1" src="palmventures_logo.png" width="auto" height="150px" align="top">
+              </div>
+							<hr align="center">		
+			</div>
+		</div>
+	</div>
+
+	<!--Imagery-->
+	<div style="display: flex; width: 100%; margin-bottom: 5px; margin-top: 5px; gap: 06px; padding: 10px; align: center">
+	
+  						<div style="width: 50%; text-align: left; flex-shrink: 0;">
+          					<p align="left">
+          					<font face="Verdana" size="4">
+          						All Property Median Price graph
+          					</font></p>
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  									<font face="Verdana" size="3" color="black">
+                 					All prices based in USD averaged out !
+                 				</font>
+                 			</p>
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">                 			                 
+                     			<img border="1" src="pricetrendsall.png" width="545px" height="auto" align="top">
+								</p>			    				
+  						</div>
+  						
+  						<div style="width: 50%; text-align: left; flex-shrink: 0;">
+          					<p align="left">
+          					<font face="Verdana" size="4">
+          						All Property Best Suitablity!
+          					</font></p>
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+  									<font face="Verdana" size="3" color="black">
+                 					All scores are based on a scale of 1 to 10
+                 					</font>
+                 				</p>                 
+  								<p align="left" style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 2px; margin-bottom: 2px">
+									<table style="border-collapse: collapse; width: 545px; font-family: Tahoma, sans-serif; font-size: 12px; text-align: center;" bordercolorlight="#0000FF" bordercolordark="#000080" border="2" bgcolor="#FFFFFF">
+									    <tr style="font-weight: bold;">
+									        <th style="border: 1px solid black; padding: 8px; width: 16.67%;" bgcolor="#C0C0C0">Metric</th>
+									        <th style="border: 1px solid black; padding: 8px; width: 16.67%;" bgcolor="#C0C0C0">SA Western Cape</th>
+									        <th style="border: 1px solid black; padding: 8px; width: 16.67%;" bgcolor="#C0C0C0">Turks & Caicos</th>
+									        <th style="border: 1px solid black; padding: 8px; width: 16.67%;" bgcolor="#C0C0C0">St Kitts & Nevis</th>
+									        <th style="border: 1px solid black; padding: 8px; width: 16.67%;" bgcolor="#C0C0C0">St Vincent & Grenadines</th>
+									        <th style="border: 1px solid black; padding: 8px; width: 16.67%;" bgcolor="#C0C0C0">USA Texas West</th>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">Bureaucracy</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">5</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">6</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">7</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">Investor
+                                              Friendly</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">6</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">7</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">7</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">&nbsp;Restrictions</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">6</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">7</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">7</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">Crime Rate</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">2</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">2</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">4</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">7</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">Affordability</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">5</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">6</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">Property
+                                              Risk</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">4</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9.5</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">9.5</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">ROI Potential</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">4</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">4</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">4</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">4</td>
+									    </tr>
+									    <tr>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">Overall Score</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">5.0</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8.2</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">5.7</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">6.5</td>
+									        <td style="border: 1px solid black; padding: 8px; vertical-align: middle; white-space: normal;">8.0</td>
+									    </tr>
+									</table>
+
+  						</div>
+	</div>
+					
         <!-- Whitepaper Popup -->
         <div id="whitepaperPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid navy; max-width: 80%; z-index: 1000;">
-            <embed src="whitepaper.pdf" type="application/pdf" width="600" height="400">  
+            <embed src="white-paper.pdf" type="application/pdf" width="600" height="400">  
             <div style="margin-top: 10px;">
                 <label><input type="checkbox" id="readCheckbox"> I have read this paper</label><br>
                 <label><input type="checkbox" id="riskCheckbox"> I understand the risks involved in staking</label><br>
@@ -401,7 +722,7 @@
                 	<h2 align="center">Fun Facts About This Website!</h2>
                 
              			<div id="image" align="center">
-                			<img src="Uploads/blockchain_logo10.jpg" alt="Inspirational crypto and real estate graphic" style="max-width: 100%; width: 400px; height: auto; border-radius: 10px ; margin: 15px 0">
+                			<img src="blockchain_logo10.jpg" alt="Inspirational crypto and real estate graphic" style="max-width: 100%; width: 400px; height: auto; border-radius: 10px ; margin: 15px 0">
                 		</div>
 				    <p style="line-height: 150%; margin-left: 0; margin-right: 0; margin-top: 1; margin-bottom: 0">
                   <font face="Arial">
@@ -442,7 +763,7 @@
 				    Whether you're curious about meme coins, real estate, or just love a good underdog story, you're in the right place!<br>
 				    <br>
 				    <strong>Ready to join the adventure? Explore, dream big, and let's tokenize the world together!</strong><br>
-				    <img src="Uploads/3palm_logo.png" alt="Inspirational crypto and real estate graphic" width="200" height="150"></font></p>
+				    <img src="3palm_logo.png" alt="Inspirational crypto and real estate graphic" width="200" height="150"></font></p>
                  		<div id="closeBtn" align="center">
                 			<button onclick="closeInformation()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"><b>Close</b></button>
                 		</div>
@@ -450,7 +771,58 @@
 				</div>
         </div>
 
-     
+			<!--Readmore popup-->
+			<div id="popup1" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				  <embed src="main-report.pdf" frameborder="0" type="application/pdf" width="600" height="400">
+				  <div id="closeBtn" align="right">
+                     <p align="center">
+					 <button onclick="closeReport1()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"
+                  onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">					 
+					 <b>Close</b>
+					 </button>
+				  </div>
+			</div>
+			
+			<!--Readmore2 popup-->
+			<div id="popup2" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				  <embed src="golden-list.pdf" frameborder="0" type="application/pdf" width="600" height="400">
+				  <div id="closeBtn" align="right">
+                     <p align="center">
+					 <button onclick="closeReport2()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"
+                  onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">					 
+					 <b>Close</b>
+					 </button>
+				  </div>
+			</div>
+			
+			<!--Readmore3 popup-->
+			<div id="popup3" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				  <embed src="lsd-report.pdf" frameborder="0" type="application/pdf" width="600" height="400">
+				  <div id="closeBtn" align="right">
+                     <p align="center">
+					 <button onclick="closeReport3()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"
+                  onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">					 
+					 <b>Close</b>
+					 </button>
+				  </div>
+			</div>
+			
+			<!--Readmore4 popup-->
+			<div id="popup4" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 10px 10px; border-radius: 15px; border: 2px solid navy; max-width: 95%;">
+				  <embed src="qualification-list.pdf" frameborder="0" type="application/pdf" width="600" height="400">
+				  <div id="closeBtn" align="right">
+                     <p align="center">
+					 <button onclick="closeReport4()" style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 200px; margin-top: 10px"
+                  onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
+                  onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';">					 
+					 <b>Close</b>
+					 </button>
+				  </div>
+			</div>
+
 
         <!-- Footer Text -->
 		 <footer>
@@ -485,30 +857,23 @@
                 Contact owner to advertise your business here! USD200 /Month
             </a>
         	</div>
+        	
         <!-- QR Images -->
 			<div class="commercial-placeholder4" style="display: flex; width: 100%; gap: 2px; justify-content: center;">        	
   					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
     					<a href="https://linktr.ee/Panorama.Global" target="_blank" rel="nofollow noopener">
-      					<img src="Uploads/panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
+      					<img src="panorama.global_qr.png" alt="Panorama Global Linktree QR Code" style="border: 0; width: 98px; height: auto;">
     					</a>
   					</div>
  					<div style="width: 50%; max-width: 100px; text-align: center; flex-shrink: 0;">
     					<a href="https://pump.fun/coin/4c6C2AiAc91BZuHUKme6Rj9ZFfVV61f9ALWe1i29pump" target="_blank" rel="nofollow noopener">
-      					<img src="Uploads/coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
+      					<img src="coin7.jpg" alt="VISTA Coin Purchase" style="border: 0; width: 96px; height: 96px;">
                  		</a>
   					</div>
-			</div>	
-       	<!--<div class="commercial-placeholder5" style="display: flex; width: 100%; align: center;">
-					<div style="width: 200px; text-align: center; flex-shrink: 0; height: 19">       
-        				<button id="informationBtn" enabled
-              		data-tooltip2="Interesting facts about this Website!"
-              		style="background-color: #007bff; color: navy; border: 2px solid navy; padding: 10px 12px; font-family: Tahoma; font-size: 16px; cursor:  pointer; width: 200px;"
-             			onmouseover="this.style.backgroundColor='navy'; this.style.color='white'; this.style.borderColor='#007bff';"
-            			onmouseout="this.style.backgroundColor='#007bff'; this.style.color='navy'; this.style.borderColor='navy';"><b>Website Information</b>
-            			</button>
-        			</div>        
-			</div>-->        
-      </div>
+			</div     
+    </div>
+</div>    
+<!--Container end-->
 
     
     <!-- Inline JavaScript for Wallet, Popup, Logic -->
@@ -533,13 +898,39 @@
     		closewhiteBtn.addEventListener('click', () => {
         	whitepaperPopup.style.display = 'none';
     		});
-
     </script>
     
-
-    <!-- Site info function-->
+	<!--Report function-->
     <script>
+    	const readMore = document.getElementById('readMore');
+       const popup1 = document.getElementById('popup1');
+       readMore.addEventListener('click', () => {popup1.style.display = 'block';});
+       function closeReport1() {popup1.style.display = 'none';} 
+    </script>
+    
+     <script>
+    	const readMore2 = document.getElementById('readMore2');
+       const popup2 = document.getElementById('popup2');
+       readMore2.addEventListener('click', () => {popup2.style.display = 'block';});
+       function closeReport2() {popup2.style.display = 'none';} 
+    </script>
+    
+    <script>
+    	const readMore3 = document.getElementById('readMore3');
+       const popup3 = document.getElementById('popup3');
+       readMore3.addEventListener('click', () => {popup3.style.display = 'block';});
+       function closeReport3() {popup3.style.display = 'none';} 
+    </script>
+    
+    <script>
+    	const readMore4 = document.getElementById('readMore4');
+       const popup4 = document.getElementById('popup4');
+       readMore4.addEventListener('click', () => {popup4.style.display = 'block';});
+       function closeReport4() {popup4.style.display = 'none';} 
+    </script>    
 
+	<!-- Site information button function-->
+    <script>
         const informationBtn = document.getElementById('informationBtn');
         const informationPopup = document.getElementById('informationPopup');
         informationBtn.addEventListener('click', () => {informationPopup.style.display = 'block';});
